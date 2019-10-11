@@ -1,25 +1,21 @@
+<!DOCTYPE html>
 <html lang="ru">
 
 <head>
-  <script src="js/jquery.js"></script>
-  <script src="js/bootstrap.js"></script>
-  <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+
+
+  <script async="async" src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&onload=init"></script>
 
   <link href="css/bootstrap.css" rel="stylesheet">
   <link href="css/stylish-portfolio.css" rel="stylesheet">
 
   <!-- Custom Fonts -->
-  <link href="font-awesome/css/font-awesome.css" rel="stylesheet" type="text/css">
-  <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+  <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet">
 
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.js"></script>
-  <![endif]-->
 
   <meta charset="utf-8">
+  <title>Твой Дом</title>
 </head>
 
 <body>
@@ -28,24 +24,26 @@
   <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle"><i class="fa fa-bars"></i></a>
   <nav id="sidebar-wrapper">
     <ul class="sidebar-nav">
-      <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+      <li>
+        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+      </li>
       <li class="sidebar-brand">
-        <button class="btn-link" onclick = "$('#menu-close').click(); window.location="#top"">Агентство
+        <button class="btn-link" onclick = "$('#menu-close').click(); window.location='#top'">Агентство</button>
       </li>
       <li>
-        <button class="btn-link" onclick = "$('#menu-close').click(); window.location="#top"">Главная
+        <button class="btn-link" onclick = "$('#menu-close').click(); window.location='#top'">Главная</button>
       </li>
       <li>
-        <button class="btn-link" onclick = "$('#menu-close').click(); window.location='#services'">О нас
+        <button class="btn-link" onclick = "$('#menu-close').click(); window.location='#services'">О нас</button>
       </li>
       <li>
-        <button class="btn-link" onclick = "$('#menu-close').click(); window.location='#services'">Услуги
+        <button class="btn-link" onclick = "$('#menu-close').click(); window.location='#services'">Услуги</button>
       </li>
       <!-- <li>
         <a href="#portfolio" onclick = $("#menu-close").click(); >Портфолио</a>
       </li> -->
       <li>
-        <button class="btn-link" onclick = "$('#menu-close').click(); window.location='#contact'">Контакты
+        <button class="btn-link" onclick = "$('#menu-close').click(); window.location='#contact'">Контакты</button>
       </li>
     </ul>
   </nav>
@@ -54,7 +52,7 @@
   <header id="top" class="header">
     <div class="text-vertical-center">
       <div style="margin: 0; padding: 0; font-size: 4.5em; font-weight: 700;">Твой Дом</div>
-      <div style="margin-top: 20;margin-bottom: 10;font-weight: 500; font-size: 24">Агентство недвижимости</div>
+      <div style="margin-top: 20px ;margin-bottom: 10px ;font-weight: 500; font-size: 24px">Агентство недвижимости</div>
       <br>
       <a href="#about" class="btn btn-dark btn-lg">Узнать больше >></a>
     </div>
@@ -142,23 +140,7 @@
     <!-- /.container -->
   </section>
 
-  <!-- Map -->
-  <section id="contact">
-    <div id="map" class="map" style="width: 100%; height: 100%"></div>
-
-
-    <div class="container">
-    <div class="row text-center">
-      <div class="col-lg-12">
-      <div style="font-size: 30; margin-top: 40; margin-bottom: 20;">Наш офис</div>
-      <img src="img/office place.jpg" width="600" class="img-rounded center-block">
-      </div>
-    </div>
-    </div>
-  </section>
-
-
-  <script type="text/javascript">
+  <script>
     ymaps.ready(init);
     function init(){
       var map = new ymaps.Map("map", {
@@ -175,11 +157,28 @@
     }
   </script>
 
+
+  <!-- Map -->
+  <section id="contact">
+    <div id="map" class="map" style="width: 100%; height: 100%;"></div>
+
+    <div class="container">
+    <div class="row text-center">
+      <div class="col-lg-12">
+      <div style="font-size: 30px; margin-top: 40px; margin-bottom: 20px;"><h2>Наш офис</h2></div>
+      <img src="img/office_place.jpg" width="600" class="img-rounded center-block" alt="">
+      </div>
+    </div>
+    </div>
+  </section>
+
+
+
   <!-- Footer -->
   <footer>
     <div class="container">
       <div class="row">
-        <div class="col-lg-10 col-lg-offset-1 text-center" id="contact">
+        <div class="col-lg-10 col-lg-offset-1 text-center" id="contacts">
           <h4><strong>Твой Дом</strong>
           </h4>
           <p>г. Москва<br>Старомонетный переулок, 10</p>
@@ -191,10 +190,10 @@
           <br>
           <ul class="list-inline">
             <li>
-              <a href="https://vk.com/"><i class="fa fa-vk fa-fw fa-3x"></a></i>
+              <a href="https://vk.com/"><i class="fa fa-vk fa-fw fa-3x"></i></a>
             </li>
             <li>
-              <a href="http://example.com/"><i class="fa fa-link fa-fw fa-3x"></a></i>
+              <a href="http://example.com/"><i class="fa fa-link fa-fw fa-3x"></i></a>
             </li>
           </ul>
         </div>
@@ -202,6 +201,16 @@
     </div>
   </footer>
 
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.js"></script>
+  <![endif]-->
 
   <!-- Custom Theme JavaScript -->
   <script>
